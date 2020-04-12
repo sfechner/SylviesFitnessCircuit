@@ -57,13 +57,13 @@ WarmUpList = ('Burpees','5 shoulder circles + 2 wind mills','Glute bridge', 'Squ
 #'Back stretch (turn leg over side)'
 ListBelly = ('Sit up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twist','Heel Touch Crunches','Leg Lift & Hold') #Windshield Wiper
 
-ListLeg = ('Wall Sit', 'Rope Jumps',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet + Jump','Squat',
+ListLeg = ('Wall Sit (alt: Squat)', 'Rope Jumps',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet + Jump','Squat',
            'Frog Squats', 'Hurdles','Jumping Lunges (Plyo)','High Knee and Tuck Jumps', 'Sumo Squat',
             'Sumo Squat (+ Touch)','Squat Walk', 'Backward Lunge', '6 Fast Feet In & Out', '2 Squats, 2 Squat Jumps','Jump + Squat Backwards', 
-            'Side Lunges')
+            'Side Lunges', 'Inner Sole Taps')
 
 ListRest = ('Mountain Climber', 'Push Ups','Burpees','Pull Ups (alt: Superman)', 'Plank', 'Shoot through', 'Low + High Plank Switch',
-            'Swimmer', 'Superman (alt: Pull Ups)', 'Diamond Push Up', 'Spiderman Push Up', 'Inch Worm', 'Bear Crawl','Jumping Jacks',
+            'Swimmer', 'Diamond Push Up', 'Spiderman Push Up', 'Inch Worm', 'Bear Crawl','Jumping Jacks',
             'Single-Leg Glute Bridge','4 Sprawl + 2 Push Up', 'Jump + Donkey Kick (n+1)','Push Up + Side Turn', 'Mount. Climb. Side Step',
             'Bird Dog','Side Plank + elev. leg', 'Tricep Dips', 'Star Push Up Jump', 'Burpee + Jump 180','Prayer Pulse')
 
@@ -232,13 +232,12 @@ while eventChooseTime != 'Start':
     if eventChoose in ['Pre-set']:
         
     ###################### Pre-Set WORKOUT LIST #######3
-        WorkoutList = ('Jumping Jacks', 'Bird Dog', 'Heel Touch Crunches', 'Low + High Plank Switch', 
-                       'Side Lunges', 'Push Ups', 'Jump + Donkey Kick (n+1)', 'Plank', 'Squat Walk', 
-                       'Leg Lift & Hold', 'Mountain Climber', 'Ice Skater') 
-        #print(len(WorkoutList))
-        
-    #next maybe: 'Sumo Squat', '6 Fast Feet In & Out', 'Hurdles', 'Jump + Donkey Kick (n+1)', 'Plank', 'Burpees', 'Jack Knife', 'Bird Dog', 'Spiderman Push Up', 'Rope Jumps', '2 Squats, 2 Squat Jumps', 'Tricep Dips')
-    
+        WorkoutList = ('Sumo Squat (+ Touch)', 'Sit up','Swimmer',
+                       'Inner Sole Taps', 'Bicycle Crunches', '10 Fast Feet + Jump', 
+                       '4 Sprawl + 2 Push Up',  'Bear Crawl','Jack Knife', 'Wall Sit', 
+                       'Single-Leg Glute Bridge', 'Jump + Squat Backwards')
+
+ 
     elif eventChoose in ['Your Choice']:
     ###################### TODAY's PICK WORKOUT LIST #######3
         random.shuffle(NewWOList)
@@ -552,6 +551,7 @@ while (K>0):
                 exit()
             if event in '-Skip-':
                 windowWU.close()
+                K = 0
             if event == '-RESET-':
                 paused_time = start_timeWU = time_as_int()
                 current_time = 0
