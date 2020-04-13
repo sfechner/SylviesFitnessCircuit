@@ -20,10 +20,10 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          pip install pyinstaller
+          pip install pyinstaller pysimplegui
       - name: Run PyInstaller
         run: |
-          pyinstaller main.spec
+          pyinstaller SFCircuit.spec
       - name: See dist directory
         run: ls dist
       - uses: actions/upload-artifact@master
@@ -46,9 +46,9 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          pip install pyinstaller
+          pip install pyinstaller pysimplegui
       - name: Run PyInstaller
-        run:  pyinstaller main.spec
+        run:  pyinstaller SFCircuit.spec
       - name: See dist directory
         run: ls dist
       - uses: actions/upload-artifact@master
@@ -71,7 +71,7 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          pip install pyinstaller
+          pip install pyinstaller pysimplegui
       - name: Run PyInstaller
         run: |
           pyinstaller SFCircuit.spec
@@ -97,7 +97,7 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          pip install pyinstaller
+          pip install pyinstaller pysimplegui
       - name: Run PyInstaller
         run:  pyinstaller SFCircuit.spec
       - name: See dist directory

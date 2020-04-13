@@ -4,6 +4,7 @@ import time
 import simpleaudio as sa
 import random
 import math
+from sys import exit
 import os
 
 """
@@ -27,6 +28,18 @@ Duration and frequency of workouts can be changed within the GUI.
   it takes to execute the PySimpleGUI read and update calls (not good!)
 """
 
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
+
 def time_as_int():
     return int(round(time.time() * 100))
 
@@ -35,8 +48,8 @@ Hydrate = 60*100
 K=6 #number of warm up workouts
 #COOSE MUSIC FOR BEGINNING OF WORK, REST ETC (.WAV FILE NEEDS TO BE IN SAME FOLDER AS SCRIPT)
 
-SoundWork = os.path.join('Sounds','Air Horn-SoundBible.com-964603082.wav')
-SoundRest = os.path.join('Sounds','Bike Horn-SoundBible.com-602544869.wav')
+SoundWork = resource_path(os.path.join('Sounds','Air Horn-SoundBible.com-964603082.wav'))
+SoundRest = resource_path(os.path.join('Sounds','Bike Horn-SoundBible.com-602544869.wav'))
 #SoundRest = "beep09.wav"
 soundon = (1)  #0 = sound off, 1 == sound on  
 
