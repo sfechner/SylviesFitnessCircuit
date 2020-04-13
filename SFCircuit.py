@@ -27,6 +27,8 @@ Duration and frequency of workouts can be changed within the GUI.
   it takes to execute the PySimpleGUI read and update calls (not good!)
 """
 
+
+
 def time_as_int():
     return int(round(time.time() * 100))
 
@@ -329,7 +331,7 @@ while eventChooseTime != 'Start':
         layoutChooseTime.append(ButtonsLayOut2[l]) 
         
     
-    windowChooseTime = sg.Window('choose your workout', layoutChooseTime,
+    windowChooseTime = sg.Window('choose your workout duration', layoutChooseTime,
                        auto_size_buttons=False,
                        keep_on_top=True,
                        grab_anywhere=True,
