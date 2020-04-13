@@ -1,5 +1,8 @@
 # SylviesFitnessCircuit
 
+![Logo-Banner](/LogoSFC/Logo-Banner.png)
+
+
 SylviesFitnessCicuit (SFCircuit.py) provides a python-based circuit training exercise program to perform at home alone or together with your friends.
 
 The core of the program is based on the pysimplegui cookbook https://pysimplegui.readthedocs.io/en/latest/cookbook/ and the demo program WidgetTimer: 
