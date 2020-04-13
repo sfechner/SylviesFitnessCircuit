@@ -20,7 +20,7 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          pip install pyinstaller pysimplegui
+          pip install pyinstaller pysimplegui simpleaudio
       - name: Run PyInstaller
         run: |
           pyinstaller SFCircuit.spec
@@ -46,7 +46,7 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          pip install pyinstaller pysimplegui
+          pip install pyinstaller pysimplegui simpleaudio
       - name: Run PyInstaller
         run:  pyinstaller SFCircuit.spec
       - name: See dist directory
@@ -71,14 +71,14 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          pip install pyinstaller pysimplegui
+          pip install pyinstaller pysimplegui simpleaudio
       - name: Run PyInstaller
         run: |
           pyinstaller SFCircuit.spec
       - name: See dist directory
         run: ls dist
       - uses: actions/upload-artifact@master
-        with:
+        with: 
           name: Ubuntu
           path: dist
 
@@ -97,7 +97,7 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          pip install pyinstaller pysimplegui
+          pip install pyinstaller pysimplegui simpleaudio
       - name: Run PyInstaller
         run:  pyinstaller SFCircuit.spec
       - name: See dist directory
