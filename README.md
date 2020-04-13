@@ -1,6 +1,6 @@
 # SylviesFitnessCircuit
 
-![Logo-Banner](/LogoSFC/Logo-Banner.png)
+![Logo-Banner](/LogoSFC/Logo-Banner-1-01.png)
 
 
 SylviesFitnessCicuit (SFCircuit.py) provides a python-based circuit training exercise program to perform at home alone or together with your friends.
