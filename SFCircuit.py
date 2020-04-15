@@ -234,11 +234,11 @@ while eventChooseTime != 'Start':
     if eventChoose in ['Pre-set']:
         
     ###################### Pre-Set WORKOUT LIST #######3
-        WorkoutList = ('Sumo Squat (+ Touch)', 'Sit up','Swimmer',
-                       'Inner Sole Taps', 'Bicycle Crunches', '10 Fast Feet + Jump', 
-                       '4 Sprawl + 2 Push Up',  'Bear Crawl','Jack Knife', 'Wall Sit', 
-                       'Single-Leg Glute Bridge', 'Jump + Squat Backwards')
-
+        WorkoutList = ('Jump + Squat Backwards', 'Rope Jumps', 'Heel Touch Crunches', 
+                       'Frog Squats', 'Bird Dog', 'Prayer Pulse', 'Inner Sole Taps', 
+                       'Ice Skater', 'Sit up', 'Bear Crawl', '6 Fast Feet In & Out', 
+                       'Push Up + Side Turn')
+                
  
     elif eventChoose in ['Your Choice']:
     ###################### TODAY's PICK WORKOUT LIST #######3
