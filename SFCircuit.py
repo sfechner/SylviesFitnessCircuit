@@ -763,7 +763,7 @@ while (gesamt>0):
             play_obj = wave_obj.play()
             play_obj.wait_done()
    
-        
+            
         window.UnHide() #while True:
         while (TimeDown > 0):   # print('I am here')
             # --------- Read and update window --------
