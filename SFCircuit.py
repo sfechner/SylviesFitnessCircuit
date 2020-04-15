@@ -36,8 +36,7 @@ def resource_path(relative_path):
     except Exception:
         base_path = os.path.abspath(".")
 
-    return os.path.join(base_path, relative_path)
-
+    return os.path.join(base_path, relative_path
 
 
 def time_as_int():
@@ -245,11 +244,11 @@ while eventChooseTime != 'Start':
     if eventChoose in ['Pre-set']:
         
     ###################### Pre-Set WORKOUT LIST #######3
-        WorkoutList = ('Sumo Squat (+ Touch)', 'Sit up','Swimmer',
-                       'Inner Sole Taps', 'Bicycle Crunches', '10 Fast Feet + Jump', 
-                       '4 Sprawl + 2 Push Up',  'Bear Crawl','Jack Knife', 'Wall Sit', 
-                       'Single-Leg Glute Bridge', 'Jump + Squat Backwards')
-
+        WorkoutList = ('Jump + Squat Backwards', 'Rope Jumps', 'Heel Touch Crunches', 
+                       'Frog Squats', 'Bird Dog', 'Prayer Pulse', 'Inner Sole Taps', 
+                       'Ice Skater', 'Sit up', 'Bear Crawl', '6 Fast Feet In & Out', 
+                       'Push Up + Side Turn')
+                
  
     elif eventChoose in ['Your Choice']:
     ###################### TODAY's PICK WORKOUT LIST #######3
@@ -342,7 +341,7 @@ while eventChooseTime != 'Start':
         layoutChooseTime.append(ButtonsLayOut2[l]) 
         
     
-    windowChooseTime = sg.Window('choose your workout', layoutChooseTime,
+    windowChooseTime = sg.Window('choose your workout duration', layoutChooseTime,
                        auto_size_buttons=False,
                        keep_on_top=True,
                        grab_anywhere=True,
