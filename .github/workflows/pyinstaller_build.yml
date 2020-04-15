@@ -71,7 +71,7 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
-          sudo apt-get install alsa
+          sudo apt-get install libasound2-dev
           pip install pyinstaller pysimplegui simpleaudio
       - name: Run PyInstaller
         run: |
