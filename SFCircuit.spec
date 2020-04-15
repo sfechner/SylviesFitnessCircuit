@@ -5,8 +5,8 @@ block_cipher = None
 
 a = Analysis(['SFCircuit.py'],
              pathex=['/Users/Fechner/Dropbox/HealthDataAnalysis/SylviesFitnessCircuit'],
-             binaries=[],
-             datas=[('Sounds', 'Sounds')],
+             binaries=[('/System/Library/Frameworks/Tk.framework/Tk', 'tk'), ('/System/Library/Frameworks/Tcl.framework/Tcl', 'tcl')],
+             datas=[],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -30,8 +30,8 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False , icon='LogoSFC/Icon.icns')
+          console=False )
 app = BUNDLE(exe,
              name='SFCircuit.app',
-             icon='LogoSFC/Icon.icns',
+             icon=None,
              bundle_identifier=None)
