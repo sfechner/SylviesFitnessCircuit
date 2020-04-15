@@ -1,3 +1,4 @@
+from sys import platform
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
@@ -5,8 +6,8 @@ block_cipher = None
 
 a = Analysis(['SFCircuit.py'],
              pathex=['/Users/Fechner/Dropbox/HealthDataAnalysis/SylviesFitnessCircuit'],
-             binaries=[('/System/Library/Frameworks/Tk.framework/Tk', 'tk'), ('/System/Library/Frameworks/Tcl.framework/Tcl', 'tcl')],
-             datas=[],
+             binaries=[],
+             datas=[('Sounds', 'Sounds')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -30,8 +31,10 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False )
-app = BUNDLE(exe,
-             name='SFCircuit.app',
-             icon=None,
-             bundle_identifier=None)
+          console=False , icon='LogoSFC/Icon.ico')
+          
+if platform == "darwin":          
+    app = BUNDLE(exe,
+                 name='SFCircuit.app',
+                 icon='LogoSFC/Icon.icns',
+    bundle_identifier=None)
