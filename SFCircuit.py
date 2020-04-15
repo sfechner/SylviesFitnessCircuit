@@ -47,7 +47,7 @@ Hydrate = 60*100
 K=6 #number of warm up workouts
 #COOSE MUSIC FOR BEGINNING OF WORK, REST ETC (.WAV FILE NEEDS TO BE IN SAME FOLDER AS SCRIPT)
 
-SoundWork = resource_path(os.path.join('Sounds','Air Horn-SoundBible.com-964603082.wav'))
+SoundWork = resource_path(os.path.join('Sounds','AirHorn-SoundBible.com-964603082.wav'))
 SoundRest = resource_path(os.path.join('Sounds','Bike Horn-SoundBible.com-602544869.wav'))
 #SoundRest = "beep09.wav"
 soundon = (1)  #0 = sound off, 1 == sound on  
@@ -67,30 +67,31 @@ FontText = 16
 WarmUpList = ('Burpees','5 shoulder circles + 2 wind mills','Glute bridge', 'Squat Pulses', 'Single Leg Hip Circles', 
               'Jumping Jacks') 
 #'Back stretch (turn leg over side)'
-ListBelly = ('Sit up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twist','Heel Touch Crunches','Leg Lift & Hold') #Windshield Wiper
+ListBelly = ('Sit up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twist','Heel Touch Crunches',
+             'Leg Lift & Hold', 'Side Plank Crunches', 'Plank Dips', 'Windshield Wiper') #
 
 ListLeg = ('Wall Sit (alt: Squat)', 'Rope Jumps',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet + Jump','Squat',
            'Frog Squats', 'Hurdles','Jumping Lunges (Plyo)','High Knee and Tuck Jumps', 'Sumo Squat',
-            'Sumo Squat (+ Touch)','Squat Walk', 'Backward Lunge', '6 Fast Feet In & Out', '2 Squats, 2 Squat Jumps','Jump + Squat Backwards', 
-            'Side Lunges', 'Inner Sole Taps', 'Butt kicker')
+            'Sumo Squat (+ Touch)','Squat Walk', 'Backward Lunge + 2 Pulse', '6 Fast Feet In & Out', '2 Squats, 2 Squat Jumps','Jump + Squat Backwards', 
+            'Side Lunges', 'Inner Sole Taps', 'Butt Kicker', 'Glute Bridge','Single Leg Donkey Kick')
 
 ListRest = ('Mountain Climber', 'Push Ups','Burpees','Pull Ups (alt: Superman)', 'Plank', 'Shoot through', 'Low + High Plank Switch',
             'Swimmer', 'Diamond Push Up', 'Spiderman Push Up', 'Inch Worm', 'Bear Crawl','Jumping Jacks',
             'Single-Leg Glute Bridge','4 Sprawl + 2 Push Up', 'Jump + Donkey Kick (n+1)','Push Up + Side Turn', 'Mount. Climb. Side Step',
             'Bird Dog','Side Plank + elev. leg', 'Tricep Dips', 'Star Push Up Jump', 'Burpee + Jump 180')#,'Prayer Pulse')
 
-
+#'Side Plank Crunches', 'Glute Bridge', 'Single Leg Donkey Kick' , 
  #'Medicine ball twist',' 'medicine ball Slam', 'Box jump', 'Ketttlebell swing',
-#Donkey Jump
+
 
 AllWO = ListBelly + ListLeg + ListRest
 AllWO = list(AllWO)
 
-
+print(len(AllWO))
 
 
 #######################################################3 Welcome window and wait for next workout ##############################
-sg.theme('DarkTeal2')
+sg.theme('DarkPurple1')#DarkTeal2
 layoutWelcome = [[sg.Text('')],
           [sg.Text('Welcome to SFC - Sylvie\'s Fitness Circuit', size=(42, 1), font=('Helvetica', FontWorkOut),
                 justification='center')],
@@ -166,8 +167,8 @@ windowWelcome.close()
 eventChooseTime = 'Pick Again'
 
 while eventChooseTime != 'Start':
-    
-    sg.theme('LightBlue3')
+    #
+    sg.theme('DarkPurple1')
      
     AllWO_regrouped = []
     n = 0
@@ -240,14 +241,16 @@ while eventChooseTime != 'Start':
 #    print(len(NewWOList))    
 #    print(eventChoose)
     ################################################# Choose or create workout list ###########################################
+   
+    ################ PRe-SET ######
     
     if eventChoose in ['Pre-set']:
         
     ###################### Pre-Set WORKOUT LIST #######3
-        WorkoutList = ('Jump + Squat Backwards', 'Rope Jumps', 'Heel Touch Crunches', 
-                       'Frog Squats', 'Bird Dog', 'Prayer Pulse', 'Inner Sole Taps', 
-                       'Ice Skater', 'Sit up', 'Bear Crawl', '6 Fast Feet In & Out', 
-                       'Push Up + Side Turn')
+        WorkoutList = ('Butt Kicker', 'Mount. Climb. Side Step','Side Plank Crunches', 'Glute Bridge',
+                       'Single Leg Donkey Kick' , 'Push Up','Frog Squats', 
+                       'Burpee + Jump 180', 'Plank', '2 Squats, 2 Squat Jumps', 
+                       'Backward Lunge + Pulse', 'Crunches')
                 
  
     elif eventChoose in ['Your Choice']:
@@ -302,7 +305,7 @@ while eventChooseTime != 'Start':
     
     
     ### default values for Work out time, Rest time etc are entered here
-    sg.theme('LightBlue3')
+    sg.theme('DarkPurple1')
     layoutChooseTime = [[sg.Text('')],
               [sg.Text('Choose Timing', size=(16, 1), font=('Helvetica', 28))],
                     [sg.Text('',font=('Helvetica', 2))],
@@ -377,7 +380,7 @@ NrofWorkouts = int(valueTimes[2])
 ################################################   INTRO ###########################################
 
 ##### Introduce WorkOut ####
-sg.theme('LightBlue3')
+sg.theme('DarkPurple1')#LightBlue3
 layoutIntroWork = [[sg.Text('')],
                 [sg.Text('Intro Workouts', size=(WidthWorkOut, 1), font=('Helvetica', FontWorkOut),
                 justification='center')],
@@ -474,7 +477,7 @@ windowGetReady = sg.Window('Get Ready', layoutGetReady,
 
 current_time, paused_time, paused = 0, 0, False
 start_timeReady = time_as_int()
-ReadyCD = 5*100
+ReadyCD = 10*100
 TimeDownReady = ReadyCD 
   
 #while True:
@@ -517,7 +520,7 @@ windowGetReady.close()
 ##############################################   WARM UP TIMER ################################
   
 #### Warm up timer
-sg.theme('DarkBlue4')
+sg.theme('DarkPurple1')#DarkBlue4
 layoutWU = [[sg.Text('')],
               [sg.Text('Warm Up', size=(WidthWorkOut, 1), font=('Helvetica', FontWorkOut),
                 justification='center')],
