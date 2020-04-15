@@ -1,4 +1,3 @@
-
 name: Build Workflow
 
 on: [push, pull_request]
@@ -30,31 +29,32 @@ jobs:
         with:
           name: Windows
           path: dist/SFCircuit.exe
-  build-windows-x86:
-    runs-on: windows-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Install Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: '3.7'
-          architecture: 'x86'
-      - name: Print Versions
-        run: |
-          python --version
-          pip --version
-      - name: Install requirements
-        run: |
-          pip install pyinstaller pysimplegui simpleaudio
-      - name: Run PyInstaller
-        run:  pyinstaller SFCircuit.spec
-      - name: See dist directory
-        run: ls dist
-      - uses: actions/upload-artifact@master
-        with:
-          name: Windows-x86
-          path: dist/SFCircuit.exe
+          
+#  build-windows-x86:
+#    runs-on: windows-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v1
+#      - name: Install Python
+#        uses: actions/setup-python@v1
+#        with:
+#          python-version: '3.7'
+#          architecture: 'x86'
+#      - name: Print Versions
+#        run: |
+#          python --version
+#          pip --version
+#      - name: Install requirements
+#        run: |
+#          pip install pyinstaller pysimplegui simpleaudio
+#      - name: Run PyInstaller
+#        run:  pyinstaller SFCircuit.spec
+#      - name: See dist directory
+#        run: ls dist
+#      - uses: actions/upload-artifact@master
+#        with:
+#          name: Windows-x86
+#          path: dist/SFCircuit.exe
 
   build-ubuntu:
     runs-on: ubuntu-latest
