@@ -29,7 +29,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: Windows
-          path: dist/main.exe
+          path: dist/SFCircuit.exe
   build-windows-x86:
     runs-on: windows-latest
     steps:
@@ -54,7 +54,7 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: Windows-x86
-          path: dist/main.exe
+          path: dist/SFCircuit.exe
 
   build-ubuntu:
     runs-on: ubuntu-latest
@@ -71,6 +71,7 @@ jobs:
           pip --version
       - name: Install requirements
         run: |
+          sudo apt-get install alsa
           pip install pyinstaller pysimplegui simpleaudio
       - name: Run PyInstaller
         run: |
