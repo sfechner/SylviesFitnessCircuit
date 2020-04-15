@@ -72,12 +72,12 @@ ListBelly = ('Sit up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twi
 ListLeg = ('Wall Sit (alt: Squat)', 'Rope Jumps',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet + Jump','Squat',
            'Frog Squats', 'Hurdles','Jumping Lunges (Plyo)','High Knee and Tuck Jumps', 'Sumo Squat',
             'Sumo Squat (+ Touch)','Squat Walk', 'Backward Lunge', '6 Fast Feet In & Out', '2 Squats, 2 Squat Jumps','Jump + Squat Backwards', 
-            'Side Lunges', 'Inner Sole Taps')
+            'Side Lunges', 'Inner Sole Taps', 'Butt kicker')
 
 ListRest = ('Mountain Climber', 'Push Ups','Burpees','Pull Ups (alt: Superman)', 'Plank', 'Shoot through', 'Low + High Plank Switch',
             'Swimmer', 'Diamond Push Up', 'Spiderman Push Up', 'Inch Worm', 'Bear Crawl','Jumping Jacks',
             'Single-Leg Glute Bridge','4 Sprawl + 2 Push Up', 'Jump + Donkey Kick (n+1)','Push Up + Side Turn', 'Mount. Climb. Side Step',
-            'Bird Dog','Side Plank + elev. leg', 'Tricep Dips', 'Star Push Up Jump', 'Burpee + Jump 180','Prayer Pulse')
+            'Bird Dog','Side Plank + elev. leg', 'Tricep Dips', 'Star Push Up Jump', 'Burpee + Jump 180')#,'Prayer Pulse')
 
 
  #'Medicine ball twist',' 'medicine ball Slam', 'Box jump', 'Ketttlebell swing',
