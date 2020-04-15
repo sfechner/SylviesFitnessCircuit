@@ -43,7 +43,7 @@ def time_as_int():
     return int(round(time.time() * 100))
 
 ####### PARAMETERS THAT CAN/HAVE TO BE MODIFIED #####
-Hydrate = 60*100
+Hydrate = 45*100
 K=6 #number of warm up workouts
 #COOSE MUSIC FOR BEGINNING OF WORK, REST ETC (.WAV FILE NEEDS TO BE IN SAME FOLDER AS SCRIPT)
 
@@ -247,11 +247,12 @@ while eventChooseTime != 'Start':
     if eventChoose in ['Pre-set']:
         
     ###################### Pre-Set WORKOUT LIST #######3
-        WorkoutList = ('Butt Kicker', 'Mount. Climb. Side Step','Side Plank Crunches', 'Glute Bridge',
-                       'Single Leg Donkey Kick' , 'Push Up','Frog Squats', 
-                       'Burpee + Jump 180', 'Plank', '2 Squats, 2 Squat Jumps', 
-                       'Backward Lunge + Pulse', 'Crunches')
-                
+        WorkoutList = ('Backward Lunge + Pulse','2 Squats, 2 Squat Jumps','Plank', 'Crunches',
+                       'Burpee + Jump 180','Frog Squats', 'Push Up',  'Single Leg Donkey Kick' ,
+                       'Glute Bridge', 'Side Plank Crunches', 'Mount. Climb. Side Step', 
+                       'Butt Kicker')
+                       
+      
  
     elif eventChoose in ['Your Choice']:
     ###################### TODAY's PICK WORKOUT LIST #######3
