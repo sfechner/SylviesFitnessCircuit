@@ -12,7 +12,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.6'
+          python-version: '3.7'
           architecture: 'x64'
       - name: Print Versions
         run: |
@@ -38,7 +38,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.6'
+          python-version: '3.7'
           architecture: 'x86'
       - name: Print Versions
         run: |
@@ -64,7 +64,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.6'
+          python-version: '3.7'
       - name: Print Versions
         run: |
           python --version
@@ -90,7 +90,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v1
         with:
-          python-version: '3.6'
+          python-version: '3.7'
       - name: Print Versions
         run: |
           python --version
