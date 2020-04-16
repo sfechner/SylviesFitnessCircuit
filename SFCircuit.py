@@ -66,25 +66,32 @@ FontText = 16
 #WarmUpList = ('Burpees','Roll Backwards + strech forward','Glute bridge',  '10 Mountain Climber, 3 Push Up', 'Star Jump', 'High Knees and Air Punches') 
 WarmUpList = ('Burpees','5 shoulder circles + 2 wind mills','Glute bridge', 'Squat Pulses', 'Single Leg Hip Circles', 
               'Jumping Jacks') 
-#'Back stretch (turn leg over side)'
-ListBelly = ('Sit up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twist','Heel Touch Crunches',
-             'Leg Lift & Hold', 'Side Plank Crunches', 'Plank Dips', 'Windshield Wiper') #
 
-ListLeg = ('Wall Sit (alt: Squat)', 'Rope Jumps',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet + Jump','Squat',
-           'Frog Squats', 'Hurdles','Jumping Lunges (Plyo)','High Knee and Tuck Jumps', 'Sumo Squat',
-            'Sumo Squat (+ Touch)','Squat Walk', 'Backward Lunge + 2 Pulse', '6 Fast Feet In & Out', '2 Squats, 2 Squat Jumps','Jump + Squat Backwards', 
-            'Side Lunges', 'Inner Sole Taps', 'Butt Kicker', 'Glute Bridge','Single Leg Donkey Kick')
 
-ListRest = ('Mountain Climber', 'Push Ups','Burpees','Pull Ups (alt: Superman)', 'Plank', 'Shoot through', 'Low + High Plank Switch',
-            'Swimmer', 'Diamond Push Up', 'Spiderman Push Up', 'Inch Worm', 'Bear Crawl','Jumping Jacks',
-            'Single-Leg Glute Bridge','4 Sprawl + 2 Push Up', 'Jump + Donkey Kick (n+1)','Push Up + Side Turn', 'Mount. Climb. Side Step',
-            'Bird Dog','Side Plank + elev. leg', 'Tricep Dips', 'Star Push Up Jump', 'Burpee + Jump 180')#,'Prayer Pulse')
+######### for now each row must consist of 5 (because of this loop: for x in range(0,math.ceil(len(ListBelly)/5)))
+ListBelly = ('Sit up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twist',
+             'Heel Touch Crunches', 'Leg Lift & Hold', 'Side Plank Crunches', 'Plank Dips', 'Windshield Wiper') #
 
-#'Side Plank Crunches', 'Glute Bridge', 'Single Leg Donkey Kick' , 
+ListLeg = ('Wall Sit (alt: Squat)', 'Rope Jumps',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet + Jump',
+           'Squat', 'Frog Squats', 'Hurdles','Jumping Lunges (Plyo)','10 High Knee, 3 Tuck Jumps', 
+           'Sumo Squat', 'Jump Squat (+ Touch)','Squat Walk', 'Backward Lunge + 2 Pulse', '6 Fast Feet In & Out',
+           '2 Squats, 2 Squat Jumps','Jump + Squat Backwards', 'Side Lunges', 'Inner Sole Taps', 'Butt Kicker',
+           'Glute Bridge','Single Leg Donkey Kick', 'Jumping Jacks', 'Single-Leg Glute Bridge','Pistol Squat')
+
+ListArm = ('Push Ups', 'Pull Ups (alt: Superman)', 'Diamond Push Up', 'Spiderman Push Up' ,'Push Up + Side Turn')
+           
+
+
+ListRest = ('Mountain Climber', 'Burpees', 'Plank', 'Shoot through', 'Low + High Plank Switch',
+             'Swimmer',  'Inch Worm', 'Bear Crawl', '4 Sprawl + 2 Push Up', 'Jump + Donkey Kick (n+1)',
+             'Mount. Climb. Side Step', 'Bird Dog','Side Plank + elev. leg',  'Star Push Up Jump', 'Burpee + Jump 180') #,'Prayer Pulse')
+
+# ADD: Crab walk, Plank Side Dips, 'Tricep Dips',
  #'Medicine ball twist',' 'medicine ball Slam', 'Box jump', 'Ketttlebell swing',
 
 
-AllWO = ListBelly + ListLeg + ListRest
+
+AllWO = ListBelly + ListLeg + ListArm + ListRest
 AllWO = list(AllWO)
 
 print(len(AllWO))
@@ -169,21 +176,52 @@ eventChooseTime = 'Pick Again'
 while eventChooseTime != 'Start':
     #
     sg.theme('DarkPurple1')
-     
-    AllWO_regrouped = []
+    
+    ### list to create Belly List
+    Belly_regrouped = []
     n = 0
-    for x in range(0,math.ceil(len(AllWO)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
+    for x in range(0,math.ceil(len(ListBelly)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
         innerlist = []
         for i in range(5):
-            innerlist.append(sg.Checkbox(AllWO[n], size=(SizeWork, 1), font=('Helvetica', FontText)))
+            innerlist.append(sg.Checkbox(ListBelly[n], size=(SizeWork, 1), font=('Helvetica', FontText),text_color='white'))
             n = n+1
-        AllWO_regrouped.append(innerlist)
+        Belly_regrouped.append(innerlist)
         
- 
+    ### list to create Leg List
+    Leg_regrouped = []
+    n = 0
+    for x in range(0,math.ceil(len(ListLeg)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
+        innerlistleg = []
+        for i in range(5):
+            innerlistleg.append(sg.Checkbox(ListLeg[n], size=(SizeWork, 1), font=('Helvetica', FontText), text_color='white'))
+            n = n+1
+        Leg_regrouped.append(innerlistleg)
+        
+    ### list to create Arm List
+    Arm_regrouped = []
+    n = 0
+    for x in range(0,math.ceil(len(ListArm)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
+        innerlistArm = []
+        for i in range(5):
+            innerlistArm.append(sg.Checkbox(ListArm[n], size=(SizeWork, 1), font=('Helvetica', FontText),text_color='white'))
+            n = n+1
+        Arm_regrouped.append(innerlistArm)    
+    
+    ### list to create Core List
+    Rest_regrouped = []
+    n = 0
+    for x in range(0,math.ceil(len(ListRest)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
+        innerlistRest = []
+        for i in range(5):
+            innerlistRest.append(sg.Checkbox(ListRest[n], size=(SizeWork, 1), font=('Helvetica', FontText), text_color='white'))
+            n = n+1
+        Rest_regrouped.append(innerlistRest)    
+    
     layoutChoose = [[sg.Text('')],
                      ######## chose workout
                      [sg.Text('Choose workouts', size=(34, 1), font=('Helvetica', 28))],
-                    [sg.Text('',font=('Helvetica', 2))]]
+                    [sg.Text('',font=('Helvetica', 4))],
+                     [sg.Text('Belly workouts', size=(34, 1), font=('Helvetica', FontText+6))]]
     
     ButtonsLayOut = [[sg.Text('',font=('Helvetica', 2))], 
                      [sg.Button('Pre-set',  font=('Helvetica', FontText)),
@@ -194,15 +232,35 @@ while eventChooseTime != 'Start':
                       sg.Text(''),
                       sg.Exit( font=('Helvetica', FontText)),
                       sg.Text('')]]
+                      # include checkbox here to have the choice to have sound on or off  
     
+    #### append workouts to layout
+    for k in range(0,len(Belly_regrouped)):
+        layoutChoose.append(Belly_regrouped[k]) 
     
-    for k in range(0,len(AllWO_regrouped)):
-        layoutChoose.append(AllWO_regrouped[k]) 
+    layoutChoose.append([sg.Text('',font=('Helvetica', 4))])  
+    layoutChoose.append([sg.Text('Leg & Butt workouts', size=(34, 1), font=('Helvetica', FontText+6))])  
         
-         
+    for m in range(0,len(Leg_regrouped)):
+        layoutChoose.append(Leg_regrouped[m]) 
+      
+    layoutChoose.append([sg.Text('',font=('Helvetica', 4))])    
+    layoutChoose.append([sg.Text('Arm workouts', size=(34, 1), font=('Helvetica', FontText+6))])      
+     
+    for m in range(0,len(Arm_regrouped)):
+        layoutChoose.append(Arm_regrouped[m]) 
+    
+    layoutChoose.append([sg.Text('',font=('Helvetica', 4))])      
+    layoutChoose.append([sg.Text('Core workouts', size=(34, 1), font=('Helvetica', FontText+6))])      
+    
+    for m in range(0,len(Rest_regrouped)):
+        layoutChoose.append(Rest_regrouped[m]) 
+    
+    ### append Buttons to layout    
     for l in range(0,len(ButtonsLayOut)):
         layoutChoose.append(ButtonsLayOut[l]) 
-       
+      
+
     
     windowChoose= sg.Window('choose your workout', layoutChoose,
                        auto_size_buttons=False,
