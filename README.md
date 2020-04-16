@@ -6,9 +6,12 @@ The core of the program is based on the pysimplegui cookbook [pysimplegui_cookbo
 [pysimplegui_timer](https://github.com/PySimpleGUI/PySimpleGUI/blob/master/DemoPrograms/Demo_Desktop_Widget_Timer.py)
 
 
-## Installation and Usage
+## Download and Installation GUI
+Windows: Download here: [SFCircuit_For_Windows](https://github.com/sfechner/SylviesFitnessCircuit/suites/601505937/artifacts/4459421). Extract Zip File and save on your computer.
 
-Clone repository. Navigate in the terminal to the folder SylviesFitnessCircuit. Run via the command line: python SFCircuit.py 
+MAC: Download here: [SFCircuit_For_Mac](https://github.com/sfechner/SylviesFitnessCircuit/suites/601505937/artifacts/4459420). It may or may not run easily. Problems with Catalina and up. If the SFCircuit Icon version does not work, transform the other file into an executable filein the terminal location where the file is saved with: chmod +x SFCircuit.
+ 
+
 
 ### Gui Navigation
 
@@ -20,6 +23,8 @@ For now, lists of different workouts are accessible within the script. A Pre-Set
 
 WORKOUT and WARMUP LIST can be modified within the script.
 
+
+Installation and Usage for Python Code: Clone repository. Navigate in the terminal to the folder SylviesFitnessCircuit. Run via the command line: python SFCircuit.py 
 
 * Python 3.6
 * pysimplegui
