@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import PySimpleGUI as sg
+import PySimpleGUIWeb as sg
 #import PySimpleGUIWeb as sg
 import time
 import simpleaudio as sa
@@ -62,6 +62,10 @@ WidthWorkOut = 12 #11
 SizeWork = 24
 FontText = 16
 
+Wweb = 140
+Hweb = 2
+
+
 
 ###### WORKOUT LIST
 #WarmUpList = ('Burpees','Roll Backwards + strech forward','Glute bridge',  '10 Mountain Climber, 3 Push Up', 'Star Jump', 'High Knees and Air Punches') 
@@ -101,15 +105,15 @@ print(len(AllWO))
 #######################################################3 Welcome window and wait for next workout ##############################
 sg.theme('DarkPurple1')#DarkTeal2
 layoutWelcome = [[sg.Text('')],
-          [sg.Text('Welcome to SFC - Sylvie\'s Fitness Circuit', size=(42, 1), font=('Helvetica', FontWorkOut),
+          [sg.Text('Welcome to SFC - Sylvie\'s Fitness Circuit', size=(Wweb, Hweb), font=('Helvetica', FontWorkOut),
                 justification='center')],
-    [sg.Text('!!! Let\'s work out together !!!', size=(42, 1), font=('Helvetica', FontWorkOut),
+    [sg.Text('!!! Let\'s work out together !!!', size=(Wweb, Hweb), font=('Helvetica', FontWorkOut),
                 justification='center')],
-     [sg.Text('I am not a certified trainer. Please consult a personal trainer for advice on the exercise. ', size=(76, 1), font=('Helvetica', FontWorkOut-24),
+     [sg.Text('I am not a certified trainer. Please consult a personal trainer for advice on the exercise. ', size=(Wweb, Hweb), font=('Helvetica', FontWorkOut-24),
                 justification='center')],
-     [sg.Text('Do the exercise on your own pace. There is no winning, no losing, just fun !', size=(74, 1), font=('Helvetica', FontWorkOut-24),
+     [sg.Text('Do the exercise on your own pace. There is no winning, no losing, just fun !', size=(Wweb, Hweb), font=('Helvetica', FontWorkOut-24),
                 justification='center')],
-                    [sg.Text('', size=(36, 1), font=('Helvetica', FontWorkOut+10),
+                    [sg.Text('', size=(Wweb, Hweb), font=('Helvetica', FontWorkOut+10),
                 justification='center', key='-Welcome-')],
         [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
            #sg.Button('Reset', button_color=('white', '#007339'), key='-RESET-'),
@@ -163,7 +167,7 @@ while (TimeDownWelcome > 0):   # print('I am here')
     windowWelcome['-Welcome-'].update('{:02d}:{:02d}'.format((TimeDownWelcome  // 100) // 60,
                                                         (TimeDownWelcome // 100) % 60)) 
 
-windowWelcome.close()
+windowWelcome.Hide()
 #########
 
 
@@ -220,9 +224,9 @@ while eventChooseTime != 'Start':
     
     layoutChoose = [[sg.Text('')],
                      ######## chose workout
-                     [sg.Text('Choose workouts', size=(34, 1), font=('Helvetica', 28))],
+                     [sg.Text('Choose workouts', size=(Wweb, Hweb), font=('Helvetica', 28))],
                     [sg.Text('',font=('Helvetica', 4))],
-                     [sg.Text('Belly workouts', size=(34, 1), font=('Helvetica', FontText+6))]]
+                     [sg.Text('Belly workouts', size=(Wweb,Hweb), font=('Helvetica', FontText+6))]]
     
     ButtonsLayOut = [[sg.Text('',font=('Helvetica', 2))], 
                      [sg.Button('Pre-set',  font=('Helvetica', FontText)),
@@ -240,19 +244,19 @@ while eventChooseTime != 'Start':
         layoutChoose.append(Belly_regrouped[k]) 
     
     layoutChoose.append([sg.Text('',font=('Helvetica', 4))])  
-    layoutChoose.append([sg.Text('Leg & Butt workouts', size=(34, 1), font=('Helvetica', FontText+6))])  
+    layoutChoose.append([sg.Text('Leg & Butt workouts', size=(Wweb, Hweb), font=('Helvetica', FontText+6))])  
         
     for m in range(0,len(Leg_regrouped)):
         layoutChoose.append(Leg_regrouped[m]) 
       
     layoutChoose.append([sg.Text('',font=('Helvetica', 4))])    
-    layoutChoose.append([sg.Text('Arm workouts', size=(34, 1), font=('Helvetica', FontText+6))])      
+    layoutChoose.append([sg.Text('Arm workouts', size=(Wweb, Hweb), font=('Helvetica', FontText+6))])      
      
     for m in range(0,len(Arm_regrouped)):
         layoutChoose.append(Arm_regrouped[m]) 
     
     layoutChoose.append([sg.Text('',font=('Helvetica', 4))])      
-    layoutChoose.append([sg.Text('Core workouts', size=(34, 1), font=('Helvetica', FontText+6))])      
+    layoutChoose.append([sg.Text('Core workouts', size=(Wweb, Hweb), font=('Helvetica', FontText+6))])      
     
     for m in range(0,len(Rest_regrouped)):
         layoutChoose.append(Rest_regrouped[m]) 
@@ -273,7 +277,7 @@ while eventChooseTime != 'Start':
     
     eventChoose, valueWO = windowChoose.read()  
       
-    windowChoose.close()
+    windowChoose.Hide()
     
     
     #eventChoose = StartPick()  
@@ -417,7 +421,7 @@ while eventChooseTime != 'Start':
     
     eventChooseTime, valueTimes = windowChooseTime.read()  
     
-    windowChooseTime.close()   
+    windowChooseTime.Hide()   
 
 #    print(eventChooseTime)
 #    print(type(eventChooseTime))
@@ -446,11 +450,11 @@ NrofWorkouts = int(valueTimes[2])
 ##### Introduce WorkOut ####
 sg.theme('DarkPurple1')#LightBlue3
 layoutIntroWork = [[sg.Text('')],
-                [sg.Text('Intro Workouts', size=(WidthWorkOut, 1), font=('Helvetica', FontWorkOut),
+                [sg.Text('Intro Workouts', size=(Wweb, Hweb), font=('Helvetica', FontWorkOut),
                 justification='center')],
-          [sg.Text('', size=(WidthTime, 1), font=('Helvetica', FontTimer),
+          [sg.Text('', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='-IntroWork-')],
-            [sg.Text('', size=(WidthWorkOut, 3), font=('Helvetica', FontWorkOut),
+            [sg.Text('', size=(Wweb, Hweb*2), font=('Helvetica', FontWorkOut),
                 justification='center', key='workout')],
           [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
            #sg.Button('Reset', button_color=('white', '#007339'), key='-RESET-'),
@@ -522,9 +526,9 @@ windowIntroWork.close()
 #######################################################3 Get READY To WARM UP  ##############################
 sg.theme('DarkRed1')
 layoutGetReady = [[sg.Text('')],
-          [sg.Text('Get Ready to warm up', size=(20, 1), font=('Helvetica', FontTimer),
+          [sg.Text('Get Ready to warm up', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='-delete-')],
-                [sg.Text('', size=(20, 1), font=('Helvetica', FontTimer),
+                [sg.Text('', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='-getready-')],
         [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
            #sg.Button('Reset', button_color=('white', '#007339'), key='-RESET-'),
@@ -578,7 +582,7 @@ while (TimeDownReady > 0):   # print('I am here')
     windowGetReady['-getready-'].update('{:02d}:{:02d}'.format((TimeDownReady  // 100) // 60,
                                                         (TimeDownReady // 100) % 60)) 
 
-windowGetReady.close()
+windowGetReady.Hide()
 #########
 
 ##############################################   WARM UP TIMER ################################
@@ -586,11 +590,11 @@ windowGetReady.close()
 #### Warm up timer
 sg.theme('DarkPurple1')#DarkBlue4
 layoutWU = [[sg.Text('')],
-              [sg.Text('Warm Up', size=(WidthWorkOut, 1), font=('Helvetica', FontWorkOut),
+              [sg.Text('Warm Up', size=(Wweb, Hweb), font=('Helvetica', FontWorkOut),
                 justification='center')],
-          [sg.Text('', size=(WidthTime, 1), font=('Helvetica', FontTimer),
+          [sg.Text('', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='Warmup')],
-            [sg.Text('', size=(WidthWorkOut, 3), font=('Helvetica', FontWorkOut),
+            [sg.Text('', size=(Wweb, Hweb*2), font=('Helvetica', FontWorkOut),
                 justification='center', key='workout')],
           [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
            #sg.Button('Reset', button_color=('white', '#007339'), key='-RESET-'),
@@ -660,15 +664,15 @@ while (K>0):
             play_obj = wave_obj.play()
             play_obj.wait_done()
         
-windowWU.close()
+windowWU.Hide()
 
 
 ###################################### ###################  Get READY TO WORK OUT ######
 sg.theme('DarkRed1')
 layoutGetReadyWork = [[sg.Text('')],
-          [sg.Text('Get Ready to work out', size=(20, 1), font=('Helvetica', FontTimer),
+          [sg.Text('Get Ready to work out', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='-delete-')],
-                [sg.Text('', size=(20, 1), font=('Helvetica', FontTimer),
+                [sg.Text('', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='-getready-')],
         [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
         sg.Button('Next', button_color=('white', '#007339'), key='-Next-'),
@@ -717,7 +721,7 @@ while (TimeDownReady > 0):   # print('I am here')
     windowGetReadyWork['-getready-'].update('{:02d}:{:02d}'.format((TimeDownReady  // 100) // 60,
                                                         (TimeDownReady // 100) % 60)) 
 
-windowGetReadyWork.close()
+windowGetReadyWork.Hide()
 
 ##########################################  WORKOUT + REST and HYDRATE ##############
 #sg.theme('DarkPurple5')
@@ -725,9 +729,9 @@ windowGetReadyWork.close()
 final = NrofWorkouts * gesamt
 sg.theme('DarkRed1')
 layout = [[sg.Text('')],
-          [sg.Text('', size=(WidthTime, 1), font=('Helvetica', FontTimer),
+          [sg.Text('', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='text')],
-            [sg.Text('', size=(WidthWorkOut, 4), font=('Helvetica', FontWorkOut),
+            [sg.Text('', size=(Wweb, Hweb*2), font=('Helvetica', FontWorkOut),
                 justification='center', key='workout')],
           [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
         sg.Button('Next', button_color=('white', '#007339'), key='-Next-'),
@@ -753,11 +757,11 @@ window = sg.Window('Work Time', layout,
 
 sg.theme('Black')
 layout2 = [[sg.Text('')],
-          [sg.Text('', size=(WidthTime, 1), font=('Helvetica', FontTimer),
+          [sg.Text('', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='text2')], 
-         [sg.Text('REST', size=(WidthWorkOut, 1), font=('Helvetica', FontWorkOut),
+         [sg.Text('REST', size=(Wweb, Hweb), font=('Helvetica', FontWorkOut),
                 justification='center', key='-rest-')],
-         [sg.Text('', size=(WidthWorkOut, 3), font=('Helvetica', FontWorkOut),
+         [sg.Text('', size=(Wweb, Hweb*2), font=('Helvetica', FontWorkOut),
                 justification='center', key='-upnext-')],           
           [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
            sg.Button('Next', button_color=('white', '#007339'), key='-Next-'),
@@ -782,13 +786,13 @@ window2 = sg.Window('Rest', layout2,
 ##### theme Hydrate 
 sg.theme('DarkBlue10')         
 layout3 = [[sg.Text('')],
-          [sg.Text('', size=(WidthTime, 1), font=('Helvetica', FontTimer),
+          [sg.Text('', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='text3')],
-      [sg.Text('WATER REFILL', size=(WidthWorkOut,3), font=('Helvetica', FontWorkOut),
+      [sg.Text('WATER REFILL', size=(Wweb, Hweb*2), font=('Helvetica', FontWorkOut),
                 justification='center', key='-HYDRATE2-')],
                # [sg.Text('up next: ', size=(WidthWorkOut, ), font=('Helvetica', FontWorkOut),
                # justification='center', key='-WOafterBreak-')],
-            [sg.Text('Up next:  '+ WorkoutList[int(valueTimes[2])-1], size=(WidthWorkOut,3), font=('Helvetica', FontWorkOut),
+            [sg.Text('Up next:  '+ WorkoutList[int(valueTimes[2])-1], size=(Wweb, Hweb*2), font=('Helvetica', FontWorkOut),
                 justification='center', key='-HYDRATE-')],         
           [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
            sg.Button('Next', button_color=('white', '#007339'), key='-Next-'),
@@ -919,9 +923,9 @@ while (gesamt>0):
     ####### GO THROUGH HYDRATE ONE TIME LESS
     if gesamt == 0:
         #break
-        window.close()      
-        window2.close()
-        window3.close()
+        window.Hide()      
+        window2.Hide()
+        window3.Hide()
         sg.theme('DarkRed1')
         layoutDONE = [[sg.Text('')],
                   [sg.Text('Congrats You Finished !!!', size=(20, 1), font=('Helvetica', FontTimer),
@@ -938,7 +942,7 @@ while (gesamt>0):
 
         time.sleep(5)
         
-        windowDONE.close()
+        windowDONE.Hide()
         
         break
 
