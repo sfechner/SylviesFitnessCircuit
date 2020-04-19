@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import PySimpleGUI as sg
+#import PySimpleGUIWeb as sg
 import time
 import simpleaudio as sa
 import random
@@ -305,10 +306,9 @@ while eventChooseTime != 'Start':
     if eventChoose in ['Pre-set']:
         
     ###################### Pre-Set WORKOUT LIST #######3
-        WorkoutList = ('Backward Lunge + Pulse','2 Squats, 2 Squat Jumps','Plank', 'Crunches',
-                       'Burpee + Jump 180','Frog Squats', 'Push Up',  'Single Leg Donkey Kick' ,
-                       'Glute Bridge', 'Side Plank Crunches', 'Mount. Climb. Side Step', 
-                       'Butt Kicker')
+        WorkoutList = ('Spiderman Push Up', 'Ice Skater', '4 Sprawl + 2 Push Up',  'Windshield Wiper','Rope Jumps', 'Low + High Plank Switch',
+                       'Inch Worm',  'Pull Ups (alt: Superman)', '10 Fast Feet + Jump', 'Plank Dips',
+                       'Star Push Up Jump', 'Mountain Climber')
                        
       
  
@@ -357,7 +357,8 @@ while eventChooseTime != 'Start':
     for x in range(LengthWO):  
         innerlist2 = []
         for i in range(1):
-            innerlist2.append(sg.Checkbox(WorkoutListShow [n], size=(SizeWork, 1), font=('Helvetica', FontText)))
+            #innerlist2.append(sg.Checkbox(WorkoutListShow [n], size=(SizeWork, 1), font=('Helvetica', FontText)))
+            innerlist2.append(sg.Text(WorkoutListShow [n], size=(SizeWork, 1), font=('Helvetica', FontText), text_color='white'))
             n = n+1
         ShowChosenWO.append(innerlist2)
         
@@ -368,16 +369,20 @@ while eventChooseTime != 'Start':
     layoutChooseTime = [[sg.Text('')],
               [sg.Text('Choose Timing', size=(16, 1), font=('Helvetica', 28))],
                     [sg.Text('',font=('Helvetica', 2))],
-                     [sg.Text('Enter Work Out Time (s)',font=('Helvetica', FontText)),sg.InputText('35', size=(6,1),
+                     [sg.Text('Enter Work Out Time (s)',font=('Helvetica', FontText), text_color='white'),
+                      sg.InputText('35', size=(6,1),
                       justification='center', font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
-                     [sg.Text('Enter Rest Time (s)', font=('Helvetica', FontText)),sg.InputText('10', size=(6,1),
+                     [sg.Text('Enter Rest Time (s)', font=('Helvetica', FontText), text_color='white'),
+                      sg.InputText('10', size=(6,1),
                      justification='center', font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
-                     [sg.Text('Enter Nr of Workouts',font=('Helvetica', FontText)),sg.InputText(NrWOdefault, size=(6,1),justification='center',
+                     [sg.Text('Enter Nr of Workouts',font=('Helvetica', FontText), text_color='white'),
+                      sg.InputText(NrWOdefault, size=(6,1),justification='center',
                       font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
-                     [sg.Text('Enter Nr of Repeats',font=('Helvetica', FontText)),sg.InputText('3', size=(6,1),justification='center',
+                     [sg.Text('Enter Nr of Repeats',font=('Helvetica', FontText), text_color='white'),
+                      sg.InputText('3', size=(6,1),justification='center',
                       font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
                      #[sg.Text('Enter Warm Up Time (Workouts)',font=('Helvetica', FontText)),sg.InputText('25', size=(6,1),justification='center',
