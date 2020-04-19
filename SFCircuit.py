@@ -63,7 +63,7 @@ SizeWork = 24
 FontText = 16
 
 Wweb = 140
-Hweb = 2
+Hweb = 3
 
 
 
@@ -224,9 +224,9 @@ while eventChooseTime != 'Start':
     
     layoutChoose = [[sg.Text('')],
                      ######## chose workout
-                     [sg.Text('Choose workouts', size=(Wweb, Hweb), font=('Helvetica', 28))],
+                     [sg.Text('Choose workouts', size=(Wweb, 2), font=('Helvetica', 28))],
                     [sg.Text('',font=('Helvetica', 4))],
-                     [sg.Text('Belly workouts', size=(Wweb,Hweb), font=('Helvetica', FontText+6))]]
+                     [sg.Text('Belly workouts', size=(Wweb,2), font=('Helvetica', FontText+6))]]
     
     ButtonsLayOut = [[sg.Text('',font=('Helvetica', 2))], 
                      [sg.Button('Pre-set',  font=('Helvetica', FontText)),
@@ -244,19 +244,19 @@ while eventChooseTime != 'Start':
         layoutChoose.append(Belly_regrouped[k]) 
     
     layoutChoose.append([sg.Text('',font=('Helvetica', 4))])  
-    layoutChoose.append([sg.Text('Leg & Butt workouts', size=(Wweb, Hweb), font=('Helvetica', FontText+6))])  
+    layoutChoose.append([sg.Text('Leg & Butt workouts', size=(Wweb, 2), font=('Helvetica', FontText+6))])  
         
     for m in range(0,len(Leg_regrouped)):
         layoutChoose.append(Leg_regrouped[m]) 
       
     layoutChoose.append([sg.Text('',font=('Helvetica', 4))])    
-    layoutChoose.append([sg.Text('Arm workouts', size=(Wweb, Hweb), font=('Helvetica', FontText+6))])      
+    layoutChoose.append([sg.Text('Arm workouts', size=(Wweb, 2), font=('Helvetica', FontText+6))])      
      
     for m in range(0,len(Arm_regrouped)):
         layoutChoose.append(Arm_regrouped[m]) 
     
     layoutChoose.append([sg.Text('',font=('Helvetica', 4))])      
-    layoutChoose.append([sg.Text('Core workouts', size=(Wweb, Hweb), font=('Helvetica', FontText+6))])      
+    layoutChoose.append([sg.Text('Core workouts', size=(Wweb, 2), font=('Helvetica', FontText+6))])      
     
     for m in range(0,len(Rest_regrouped)):
         layoutChoose.append(Rest_regrouped[m]) 
@@ -737,13 +737,13 @@ layout = [[sg.Text('')],
         sg.Button('Next', button_color=('white', '#007339'), key='-Next-'),
          sg.Exit(button_color=('white', 'firebrick4'), key='-RealExit-')],
             [sg.Text('',font=('Helvetica', 2))],
-            [sg.Text('Progress',font=('Helvetica', FontWorkOut-25))],
+            [sg.Text('Progress',font=('Helvetica', FontWorkOut-25))]]
             #[sg.Text('Progress', size=(35, 20), font=('Helvetica', FontWorkOut-25),
              #   justification='center')],
-          [sg.ProgressBar(NrofWorkouts, orientation='h', size=(35, 20), key='-progressbar-')],
-                       [sg.Text('',font=('Helvetica', 2))],
-           [sg.Text('Progress Laps',font=('Helvetica', FontWorkOut-25))],
-            [sg.ProgressBar(final, orientation='h', size=(35, 20), key='-progressbargesamtWork-')]]
+          #[sg.ProgressBar(NrofWorkouts, orientation='h', size=(35, 20), key='-progressbar-')],
+          #             [sg.Text('',font=('Helvetica', 2))],
+          # [sg.Text('Progress Laps',font=('Helvetica', FontWorkOut-25))],
+           # [sg.ProgressBar(final, orientation='h', size=(35, 20), key='-progressbargesamtWork-')]]
 
 window = sg.Window('Work Time', layout,
                    auto_size_buttons=False,
@@ -766,12 +766,12 @@ layout2 = [[sg.Text('')],
           [sg.Button('Pause', key='-RUN-PAUSE-', button_color=('white', '#001480')),
            sg.Button('Next', button_color=('white', '#007339'), key='-Next-'),
             sg.Exit(button_color=('white', 'firebrick4'), key='-RealExit-')],
-            [sg.Text('',font=('Helvetica', 2))],
-            [sg.Text('Progress',font=('Helvetica', FontWorkOut-25))],
-            [sg.ProgressBar(NrofWorkouts, orientation='h', size=(35, 20), key='-progressbarRest-')],
-             [sg.Text('',font=('Helvetica', 2))],
-           [sg.Text('Progress Laps',font=('Helvetica', FontWorkOut-25))],
-            [sg.ProgressBar(final, orientation='h', size=(35, 20), key='-progressbargesamt-')]]
+            [sg.Text('',font=('Helvetica', 2))]]
+         #   [sg.Text('Progress',font=('Helvetica', FontWorkOut-25))],
+           # [sg.ProgressBar(NrofWorkouts, orientation='h', size=(35, 20), key='-progressbarRest-')],
+           #  [sg.Text('',font=('Helvetica', 2))],
+         #  [sg.Text('Progress Laps',font=('Helvetica', FontWorkOut-25))],
+        #    [sg.ProgressBar(final, orientation='h', size=(35, 20), key='-progressbargesamt-')]]
  
 window2 = sg.Window('Rest', layout2,
                    auto_size_buttons=False,
@@ -808,8 +808,10 @@ window3 = sg.Window('Hydrate', layout3,
 
 
 ######################################### WORKOUT TIMER STARTS HERE
+
+
 lowerProgress  = 0
-while (gesamt>0):
+while (gesamt>0):  ### Loop for Laps
     n = NrofWorkouts # number of workouts
     gesamt = gesamt-1
     
@@ -863,7 +865,7 @@ while (gesamt>0):
                                                                 (TimeDown // 100) % 60))  
             
             window['workout'].update(WorkoutList[n])  
-            window['-progressbar-'].UpdateBar(NrofWorkouts-n)
+            #window['-progressbar-'].UpdateBar(NrofWorkouts-n)
             
         window.Hide()    
            
@@ -910,16 +912,16 @@ while (gesamt>0):
                                                                     (TimeDownRest // 100) % 60))    
     
                 window2['-upnext-'].update('up next: '+ WorkoutList[n-1]) 
-                window2['-progressbarRest-'].UpdateBar(NrofWorkouts-n)
+                #window2['-progressbarRest-'].UpdateBar(NrofWorkouts-n)
         
 
-        window2.Hide() 
+            window2.Hide() 
                 
         window2['-upnext-'].update('') 
         
     lowerProgress = lowerProgress+NrofWorkouts   
-    window['-progressbargesamtWork-'].UpdateBar(lowerProgress)   
-    window2['-progressbargesamt-'].UpdateBar(lowerProgress)   
+    #window['-progressbargesamtWork-'].UpdateBar(lowerProgress)   
+    #window2['-progressbargesamt-'].UpdateBar(lowerProgress)   
     ####### GO THROUGH HYDRATE ONE TIME LESS
     if gesamt == 0:
         #break
@@ -928,7 +930,7 @@ while (gesamt>0):
         window3.Hide()
         sg.theme('DarkRed1')
         layoutDONE = [[sg.Text('')],
-                  [sg.Text('Congrats You Finished !!!', size=(20, 1), font=('Helvetica', FontTimer),
+                  [sg.Text('Congrats You Finished !!!', size=(Wweb, Hweb), font=('Helvetica', FontTimer),
                 justification='center', key='-finished-')]]
         
         windowDONE = sg.Window('Done', layoutDONE,
