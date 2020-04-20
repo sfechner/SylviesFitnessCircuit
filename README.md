@@ -9,7 +9,7 @@ The core of the program is based on the pysimplegui cookbook [pysimplegui_cookbo
 ## Download and Installation GUI
 Windows: Download here: [SFCircuit_For_Windows](https://github.com/sfechner/SylviesFitnessCircuit/suites/601505937/artifacts/4459421). Extract Zip File and save on your computer.
 
-MAC: Download here: [SFCircuit_For_Mac](https://github.com/sfechner/SylviesFitnessCircuit/suites/601505937/artifacts/4459420). It may or may not run easily. Problems with Catalina and up. If the SFCircuit Icon version does not work, transform the other file into an executable file in the terminal location where the file is saved with: chmod +x SFCircuit.
+MAC: Download here: [SFCircuit_For_Mac](https://github.com/sfechner/SylviesFitnessCircuit/suites/610731668/artifacts/4662787). It may or may not run easily. Problems with Catalina and up. If the SFCircuit Icon version does not work, transform the other file into an executable file in the terminal location where the file is saved with: chmod +x SFCircuit.
  
 
 
