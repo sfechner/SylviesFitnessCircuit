@@ -195,7 +195,7 @@ while eventChooseTime != 'Start':
     for x in range(0,math.ceil(len(ListLeg)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
         innerlistleg = []
         for i in range(5):
-            innerlistleg.append(sg.Checkbox(ListLeg[n], size=(SizeWork, 2), font=('Helvetica', FontText)))#, text_color='white'
+            innerlistleg.append(sg.Checkbox(ListLeg[n], size=(SizeWork, 2), font=('Helvetica', FontText), text_color='#ffffff'))#, text_color='white'  text_color='white', '#001480'
             n = n+1
         Leg_regrouped.append(innerlistleg)
         
