@@ -100,7 +100,7 @@ print(len(AllWO))
 
 #######################################################3 Welcome window and wait for next workout ##############################
 #sg.theme('DarkPurple1')#DarkTeal2
-sg.theme('DarkPurple5')
+sg.theme('DarkPurple1')
 layoutWelcome = [[sg.Text('')],
           [sg.Text('Welcome to SFC - Sylvie\'s Fitness Circuit', size=(42, 1), font=('Helvetica', FontWorkOut),
                 justification='center')],
@@ -177,7 +177,7 @@ eventChooseTime = 'Pick Again'
 
 while eventChooseTime != 'Start':
     #
-    sg.theme('DarkPurple5')
+    sg.theme('DarkBlue10')
     
     ### list to create Belly List
     Belly_regrouped = []
@@ -366,7 +366,7 @@ while eventChooseTime != 'Start':
     
     
     ### default values for Work out time, Rest time etc are entered here
-    sg.theme('DarkPurple5')
+    sg.theme('DarkBlue10')
     layoutChooseTime = [[sg.Text('')],
               [sg.Text('Choose Timing', size=(16, 1), font=('Helvetica', 28))],
                     [sg.Text('',font=('Helvetica', 2))],
