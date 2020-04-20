@@ -59,7 +59,7 @@ FontWorkOut = 56
 WidthTime = 9 #8
 WidthWorkOut = 12 #11
 ######## font sizes for guis ####### 
-SizeWork = 24
+SizeWork = 28 #24
 FontText = 16
 
 
@@ -99,7 +99,8 @@ print(len(AllWO))
 
 
 #######################################################3 Welcome window and wait for next workout ##############################
-sg.theme('DarkPurple1')#DarkTeal2
+#sg.theme('DarkPurple1')#DarkTeal2
+sg.theme('DarkBlue15')
 layoutWelcome = [[sg.Text('')],
           [sg.Text('Welcome to SFC - Sylvie\'s Fitness Circuit', size=(42, 1), font=('Helvetica', FontWorkOut),
                 justification='center')],
@@ -176,7 +177,7 @@ eventChooseTime = 'Pick Again'
 
 while eventChooseTime != 'Start':
     #
-    sg.theme('DarkPurple1')
+    sg.theme('DarkBlue15')
     
     ### list to create Belly List
     Belly_regrouped = []
@@ -365,23 +366,23 @@ while eventChooseTime != 'Start':
     
     
     ### default values for Work out time, Rest time etc are entered here
-    sg.theme('DarkPurple1')
+    sg.theme('DarkBlue15')
     layoutChooseTime = [[sg.Text('')],
               [sg.Text('Choose Timing', size=(16, 1), font=('Helvetica', 28))],
                     [sg.Text('',font=('Helvetica', 2))],
-                     [sg.Text('Enter Work Out Time (s)',font=('Helvetica', FontText), text_color='white'),
+                     [sg.Text('Enter Work Out Time (s)',font=('Helvetica', FontText)),
                       sg.InputText('35', size=(6,1),
                       justification='center', font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
-                     [sg.Text('Enter Rest Time (s)', font=('Helvetica', FontText), text_color='white'),
+                     [sg.Text('Enter Rest Time (s)', font=('Helvetica', FontText)),
                       sg.InputText('10', size=(6,1),
                      justification='center', font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
-                     [sg.Text('Enter Nr of Workouts',font=('Helvetica', FontText), text_color='white'),
+                     [sg.Text('Enter Nr of Workouts',font=('Helvetica', FontText)),
                       sg.InputText(NrWOdefault, size=(6,1),justification='center',
                       font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
-                     [sg.Text('Enter Nr of Repeats',font=('Helvetica', FontText), text_color='white'),
+                     [sg.Text('Enter Nr of Repeats',font=('Helvetica', FontText)),
                       sg.InputText('3', size=(6,1),justification='center',
                       font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
