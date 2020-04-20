@@ -184,7 +184,7 @@ while eventChooseTime != 'Start':
     for x in range(0,math.ceil(len(ListBelly)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
         innerlist = []
         for i in range(5):
-            innerlist.append(sg.Checkbox(ListBelly[n], size=(SizeWork, 1), font=('Helvetica', FontText),text_color='white'))
+            innerlist.append(sg.Checkbox(ListBelly[n], size=(SizeWork, 2), font=('Helvetica', FontText)))
             n = n+1
         Belly_regrouped.append(innerlist)
         
@@ -194,7 +194,7 @@ while eventChooseTime != 'Start':
     for x in range(0,math.ceil(len(ListLeg)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
         innerlistleg = []
         for i in range(5):
-            innerlistleg.append(sg.Checkbox(ListLeg[n], size=(SizeWork, 1), font=('Helvetica', FontText), text_color='white'))
+            innerlistleg.append(sg.Checkbox(ListLeg[n], size=(SizeWork, 2), font=('Helvetica', FontText)))#, text_color='white'
             n = n+1
         Leg_regrouped.append(innerlistleg)
         
@@ -204,7 +204,7 @@ while eventChooseTime != 'Start':
     for x in range(0,math.ceil(len(ListArm)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
         innerlistArm = []
         for i in range(5):
-            innerlistArm.append(sg.Checkbox(ListArm[n], size=(SizeWork, 1), font=('Helvetica', FontText),text_color='white'))
+            innerlistArm.append(sg.Checkbox(ListArm[n], size=(SizeWork, 2), font=('Helvetica', FontText)))
             n = n+1
         Arm_regrouped.append(innerlistArm)    
     
@@ -214,7 +214,7 @@ while eventChooseTime != 'Start':
     for x in range(0,math.ceil(len(ListRest)/5)):  ##### Nr of WO 47. make it flexible or add more WO :)
         innerlistRest = []
         for i in range(5):
-            innerlistRest.append(sg.Checkbox(ListRest[n], size=(SizeWork, 1), font=('Helvetica', FontText), text_color='white'))
+            innerlistRest.append(sg.Checkbox(ListRest[n], size=(SizeWork, 2), font=('Helvetica', FontText)))
             n = n+1
         Rest_regrouped.append(innerlistRest)    
     
@@ -358,7 +358,7 @@ while eventChooseTime != 'Start':
         innerlist2 = []
         for i in range(1):
             #innerlist2.append(sg.Checkbox(WorkoutListShow [n], size=(SizeWork, 1), font=('Helvetica', FontText)))
-            innerlist2.append(sg.Text(WorkoutListShow [n], size=(SizeWork, 1), font=('Helvetica', FontText), text_color='white'))
+            innerlist2.append(sg.Text(WorkoutListShow [n], size=(SizeWork, 1), font=('Helvetica', FontText)))
             n = n+1
         ShowChosenWO.append(innerlist2)
         
