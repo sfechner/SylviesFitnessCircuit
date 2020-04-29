@@ -44,7 +44,7 @@ def time_as_int():
     return int(round(time.time() * 100))
 
 ####### PARAMETERS THAT CAN/HAVE TO BE MODIFIED #####
-Hydrate = 45*100
+Hydrate = 35*100
 K=6 #number of warm up workouts
 #COOSE MUSIC FOR BEGINNING OF WORK, REST ETC (.WAV FILE NEEDS TO BE IN SAME FOLDER AS SCRIPT)
 
@@ -71,23 +71,28 @@ WarmUpList = ('Burpees','5 shoulder circles + 2 wind mills','Glute bridge', 'Squ
 
 ######### for now each row must consist of 5 (because of this loop: for x in range(0,math.ceil(len(ListBelly)/5)))
 ListBelly = ('Sit up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twist',
-             'Heel Touch Crunches', 'Leg Lift & Hold', 'Side Plank Crunches', 'Plank Dips', 'Windshield Wiper') #
+             'Heel Touch Crunches', 'Leg Lift & Hold', 'Side Plank Crunches', 'Plank Dips', 'Windshield Wiper')
+             #'','','','','') #
 
 ListLeg = ('Wall Sit (alt: Squat)', 'Rope Jumps',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet + Jump',
            'Squat', 'Frog Squats', 'Hurdles','Jumping Lunges (Plyo)','10 High Knee, 3 Tuck Jumps', 
            'Sumo Squat', 'Jump Squat (+ Touch)','Squat Walk', 'Backward Lunge + 2 Pulse', '6 Fast Feet In & Out',
            '2 Squats, 2 Squat Jumps','Jump + Squat Backwards', 'Side Lunges', 'Inner Sole Taps', 'Butt Kicker',
-           'Glute Bridge','Single Leg Donkey Kick', 'Jumping Jacks', 'Single-Leg Glute Bridge','Pistol Squat')
+           'Glute Bridge','Single Leg Donkey Kick', 'Jumping Jacks', 'Single-Leg Glute Bridge','Pistol Squat',
+           'Calf Rises','Squat & Knee Rise','Fast Front Kicks','3 Fast Knee Rise','')
 
-ListArm = ('Push Ups', 'Pull Ups (alt: Superman)', 'Diamond Push Up', 'Spiderman Push Up' ,'Push Up + Side Turn')
+ListArm = ('Push Ups', 'Pull Ups (alt: Superman)', 'Diamond Push Up', 'Spiderman Push Up' ,'Push Up + Side Turn',
+           'Prayer Pulse','','','','')
            
 
 
 ListRest = ('Mountain Climber', 'Burpees', 'Plank', 'Shoot through', 'Low + High Plank Switch',
              'Swimmer',  'Inch Worm', 'Bear Crawl', '4 Sprawl + 2 Push Up', 'Jump + Donkey Kick (n+1)',
-             'Mount. Climb. Side Step', 'Bird Dog','Side Plank + elev. leg',  'Star Push Up Jump', 'Burpee + Jump 180') #,'Prayer Pulse')
+             'Mount. Climb. Side Step', 'Bird Dog', 'Crab Walk',  'Star Push Up Jump', 'Burpee + Jump 180',
+             'Single Hand Burpee','Burpee + Push Up (n+1)','Flutter Kicks (scissors)','High Plank Shoulder Tap','Static Spiderman') #,'Prayer Pulse')
 
-# ADD: Crab walk, Plank Side Dips, 'Tricep Dips',
+
+# ADD:  'Tricep Dips',Side Plank + elev. leg
  #'Medicine ball twist',' 'medicine ball Slam', 'Box jump', 'Ketttlebell swing',
 
 
@@ -109,6 +114,8 @@ layoutWelcome = [[sg.Text('')],
      [sg.Text('I am not a certified trainer. Please consult a personal trainer for advice on the exercise. ', size=(76, 1), font=('Helvetica', FontWorkOut-24),
                 justification='center')],
      [sg.Text('Do the exercise on your own pace. There is no winning, no losing, just fun !', size=(74, 1), font=('Helvetica', FontWorkOut-24),
+                justification='center')],
+     [sg.Text('PLEASE MUTE yourself during the workout !', size=(74, 1), font=('Helvetica', FontWorkOut-24),
                 justification='center')],
                     [sg.Text('', size=(36, 1), font=('Helvetica', FontWorkOut+10),
                 justification='center', key='-Welcome-')],
@@ -177,7 +184,7 @@ eventChooseTime = 'Pick Again'
 
 while eventChooseTime != 'Start':
     #
-    sg.theme('DarkBlue10')
+    sg.theme('DarkPurple1')
     
     ### list to create Belly List
     Belly_regrouped = []
@@ -307,11 +314,9 @@ while eventChooseTime != 'Start':
     if eventChoose in ['Pre-set']:
         
     ###################### Pre-Set WORKOUT LIST #######3
-        WorkoutList = ('Spiderman Push Up', 'Ice Skater', '4 Sprawl + 2 Push Up',  'Windshield Wiper','Rope Jumps', 'Low + High Plank Switch',
-                       'Inch Worm',  'Pull Ups (alt: Superman)', '10 Fast Feet + Jump', 'Plank Dips',
-                       'Star Push Up Jump', 'Mountain Climber')
-                       
-      
+        WorkoutList = ('2 Squats, 2 Squat Jumps', 'Heel Touch Crunches', 'Frog Squats', 'Inner Sole Taps', 'Single Leg Donkey Kick', 'Mount. Climb. Side Step', 'Plank', '3 Fast Knee Rise', 'Low + High Plank Switch', 'Inch Worm', 'Diamond Push Up', 'Sit up')
+                
+     
  
     elif eventChoose in ['Your Choice']:
     ###################### TODAY's PICK WORKOUT LIST #######3
@@ -366,12 +371,12 @@ while eventChooseTime != 'Start':
     
     
     ### default values for Work out time, Rest time etc are entered here
-    sg.theme('DarkBlue10')
+    sg.theme('DarkPurple1')
     layoutChooseTime = [[sg.Text('')],
               [sg.Text('Choose Timing', size=(16, 1), font=('Helvetica', 28))],
                     [sg.Text('',font=('Helvetica', 2))],
                      [sg.Text('Enter Work Out Time (s)',font=('Helvetica', FontText)),
-                      sg.InputText('35', size=(6,1),
+                      sg.InputText('40', size=(6,1),
                       justification='center', font=('Helvetica', FontText))],
                      [sg.Text('',font=('Helvetica', 2))],
                      [sg.Text('Enter Rest Time (s)', font=('Helvetica', FontText)),
