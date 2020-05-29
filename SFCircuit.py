@@ -70,26 +70,29 @@ WarmUpList = ('Burpees','5 shoulder circles + 2 wind mills','Glute bridge', 'Squ
 
 
 ######### for now each row must consist of 5 (because of this loop: for x in range(0,math.ceil(len(ListBelly)/5)))
-ListBelly = ('Sit up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twist',
-             'Heel Touch Crunches', 'Leg Lift & Hold', 'Side Plank Crunches', 'Plank Dips', 'Windshield Wiper')
-             #'','','','','') #
+ListBelly = ('Sit Up','Crunches', 'Jack Knife', 'Bicycle Crunches', 'Russian Twist',
+             'Heel Touch Crunches', 'Leg Lift & Hold', 'Side Plank Crunches', 'Plank Dips', 'Windshield Wiper',
+             'Flutter Kicks (Scissor)','V Crunch & Clap Under Leg','','','') 
 
-ListLeg = ('Wall Sit (alt: Squat)', 'Rope Jumps',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet + Jump',
-           'Squat', 'Frog Squats', 'Hurdles','Jumping Lunges (Plyo)','10 High Knee, 3 Tuck Jumps', 
-           'Sumo Squat', 'Jump Squat (+ Touch)','Squat Walk', 'Backward Lunge + 2 Pulse', '6 Fast Feet In & Out',
+ListLeg = ('Wall Sit (alt: Squat)', 'Rope Jump',  'Ice Skater', 'Ladder (alt: Fast Feet)', '10 Fast Feet & Jump',
+           'Squat', 'Frog Squats', 'Hurdles','Jumping Lunges','10 High Knee & 3 Tuck Jumps', 
+           'Sumo Squat', 'Jump Squat (+ Touch)','Squat Walk', 'Backward Lunge & 3 Pulses', '6 Fast Feet In & Out',
            '2 Squats, 2 Squat Jumps','Jump + Squat Backwards', 'Side Lunges', 'Inner Sole Taps', 'Butt Kicker',
            'Glute Bridge','Single Leg Donkey Kick', 'Jumping Jacks', 'Single-Leg Glute Bridge','Pistol Squat',
-           'Calf Rises','Squat & Knee Rise','Fast Front Kicks','3 Fast Knee Rise','')
+           'Calf Rises','Squat & Knee Rise','Fast Front Kicks','3 Fast Knee Rise','2 Jumping Jack & 1 Tuck Jump',
+           'Fast Squats','Side Hops','','','')
 
-ListArm = ('Push Ups', 'Pull Ups (alt: Superman)', 'Diamond Push Up', 'Spiderman Push Up' ,'Push Up + Side Turn',
-           'Prayer Pulse','','','','')
+ListArm = ('Push Up', 'Superman (alt: Pull Ups)', 'Diamond Push Up', 'Spiderman Push Up' ,'Push Up & Side Turn',
+           'Prayer Pulse','Static Spiderman','Star Push Up Jump','','')
            
 
 
-ListRest = ('Mountain Climber', 'Burpees', 'Plank', 'Shoot through', 'Low + High Plank Switch',
-             'Swimmer',  'Inch Worm', 'Bear Crawl', '4 Sprawl + 2 Push Up', 'Jump + Donkey Kick (n+1)',
-             'Mount. Climb. Side Step', 'Bird Dog', 'Crab Walk',  'Star Push Up Jump', 'Burpee + Jump 180',
-             'Single Hand Burpee','Burpee + Push Up (n+1)','Flutter Kicks (scissors)','High Plank Shoulder Tap','Static Spiderman') #,'Prayer Pulse')
+ListRest = ('Mountain Climber', 'Burpees', 'Plank', 'Shoot Through', 'Low & High Plank Switch',
+             'Swimmer',  'Inch Worm', 'Bear Crawl', '4 Sprawl & 2 Push Up', 'Jump & Donkey Kick (n+1)',
+             'Mountain Climber Side Step', 'Bird Dog', 'Crab Walk',  'Burpee & Push Up (n+1)', 'Burpee & Jump 180',
+             'Single Hand Burpee','High Plank Shoulder Tap','Push Up, Squat, Turn','10 Fast Feet & Push Up','3 Frog Squats & 6 Plank Jumps',
+             '6 Plank Jumps & Foot Touch','Plank to Bear & Tap Knees','','','')
+             #'','','','','') )
 
 
 # ADD:  'Tricep Dips',Side Plank + elev. leg
@@ -102,6 +105,7 @@ AllWO = list(AllWO)
 
 print(len(AllWO))
 
+print(AllWO)
 
 #######################################################3 Welcome window and wait for next workout ##############################
 #sg.theme('DarkPurple1')#DarkTeal2
@@ -314,7 +318,8 @@ while eventChooseTime != 'Start':
     if eventChoose in ['Pre-set']:
         
     ###################### Pre-Set WORKOUT LIST #######3
-        WorkoutList = ('2 Squats, 2 Squat Jumps', 'Heel Touch Crunches', 'Frog Squats', 'Inner Sole Taps', 'Single Leg Donkey Kick', 'Mount. Climb. Side Step', 'Plank', '3 Fast Knee Rise', 'Low + High Plank Switch', 'Inch Worm', 'Diamond Push Up', 'Sit up')
+        WorkoutList = ('Burpees', 'Heel Touch Crunches','2 Squats, 2 Squat Jumps', 'Inch Worm', '3 Frog Squats + 6 Plank Jumps',
+          'Backward Lunge + 2 Pulse', 'Flutter Kicks (scissors)', 'Calf Rises', 'Mount. Climb. Side Step','Squat & Knee Rise', '4 Sprawl + 2 Push Up',  'Butt Kicker')
                 
      
  
